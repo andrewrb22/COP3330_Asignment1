@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -15,9 +16,8 @@ public class MathGame {
     public static void printNumbers(int[] g) {
         // Print new random values
         for (int i = 0; i < g.length; i++) {
-            System.out.println(g[i]);
+            System.out.print(g[i] + " ");
         }
-        
 
     }
 
@@ -42,10 +42,10 @@ public class MathGame {
 
         values = new int[size];
         // Assign random numbers to array values
-               for (int i = 0; i < values.length; i++) {
-                values[i] = (int) (Math.random() * 6) + 1;
+        for (int i = 0; i < values.length; i++) {
+            values[i] = (int) (Math.random() * 6) + 1;
 
-            }
+        }
 
         int choice = 0;
         // Options while loop
@@ -53,7 +53,7 @@ public class MathGame {
 
             // Menu
 
-            System.out.println("Select Your Options:");
+            System.out.println("\nSelect Your Options:");
             System.out.println("1. Play Game");
             System.out.println("2. Swap Values");
             System.out.println("3. New Values");
@@ -65,7 +65,6 @@ public class MathGame {
 
                 System.out.println("\nAdd these values:");
 
-         
                 // print values call here//
 
                 printNumbers(values);
@@ -86,30 +85,44 @@ public class MathGame {
                 }
             }
 
-            if (choice == 2) {
-                System.out.println("Current:");
+            if (choice == 2) { // Option 2 - Swap Values
+                System.out.print("\nCurrent:");
                 printNumbers(values);
-                System.out.println("How many swaps?");
+                // Scannig int swaps
+                System.out.println("\nHow many swaps?");
                 int swaps = scan.nextInt();
-
+                // Swapping Values
                 swapping(values, swaps);
-                System.out.println("Final: ");
+                System.out.print("\nFinal: ");
+                // Printing numbers
                 printNumbers(values);
 
             }
 
-            if (choice == 3){
+            if (choice == 3) { // Generate new values
 
-                System.out.println("New Values:");
-                
-                //Assign new values to array
+                System.out.print("\nNew Values:");
+
+                // Assign new values to array
 
                 for (int i = 0; i < values.length; i++) {
                     values[i] = (int) (Math.random() * 6) + 1;
                 }
-                //print new values
+                // print new values
                 printNumbers(values);
-                
+
+            }
+
+            if (choice == 4) { // Sort Values
+
+                System.out.print("\nCurrent:");
+                printNumbers(values);
+
+                // Sort Array
+                Arrays.sort(values);
+                System.out.print("\nFinal:");
+                printNumbers(values);
+
             }
 
         }
