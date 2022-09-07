@@ -12,6 +12,14 @@ import java.util.Scanner;
  */
 public class MathGame {
 
+    public static void printNumbers(int[]g) {
+            // Print new random values
+            for (int i = 0; i < g.length; i++) {
+                System.out.println(g[i]);
+            }
+
+    }
+
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -48,10 +56,9 @@ public class MathGame {
 
                 }
 
-                // Print new random values
-                for (int i = 0; i < values.length; i++) {
-                    System.out.println(values[i]);
-                }
+                //print values call here//
+
+                printNumbers(values);
 
                 // Sum of new values
                 int sum = 0;
