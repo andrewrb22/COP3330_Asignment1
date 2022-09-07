@@ -7,41 +7,76 @@ import java.util.Scanner;
  * COP3330
  */
 
- /**
-  * MathGame
-  */
- public class MathGame {
- 
-   public static void main(String[] args) {
-   
-   
-    
-    Scanner scan = new Scanner(System.in);
-    
+/**
+ * MathGame
+ */
+public class MathGame {
 
-    //Welcome and size of array
-    System.out.println("Welcome to random number generator!");
-    System.out.println("How many values would you like to use:");
-      int size = scan.nextInt();
-        
-      int[] values;
-      values = new int[size];
+    public static void main(String[] args) {
 
-      System.out.println("Created!");
-      System.out.println("Your array is the: " + values.length + " Values");  
-    
+        Scanner scan = new Scanner(System.in);
+        int[] values;
+        values = new int[10];
+        // Welcome and size of array
+        System.out.println("\nWelcome to random number generator!");
+        System.out.println("How many values would you like to use:");
+        int size = scan.nextInt();
+        System.out.println("Created!");
 
+        values = new int[size];
+        int choice = 0;
+        // Options while loop
+        while (choice != 5) {
 
+            // Menu
+         
+            System.out.println("Select Your Options:");
+            System.out.println("1. Play Game");
+            System.out.println("2. Swap Values");
+            System.out.println("3. New Values");
+            System.out.println("4. Sort");
+            System.out.println("5. Exit");
+            choice = scan.nextInt();
 
+            if (choice == 1) { // Option 1 - Play Game
 
-    //Options while loop 
+                System.out.println("\nAdd these values:");
 
-    
+                // Assign random numbers to array values
+                for (int i = 0; i < values.length; i++) {
+                    values[i] = (int) (Math.random() * 6) + 1;
 
+                }
 
+                // Print new random values
+                for (int i = 0; i < values.length; i++) {
+                    System.out.println(values[i]);
+                }
 
+                // Sum of new values
+                int sum = 0;
+                for (int i = 0; i < values.length; i++) {
+                    sum += values[i];
+                }
+                // Ask user for sum
+                System.out.println("\nEnter your answer:");
+                int userSum = scan.nextInt();
+                if (userSum == sum) {
+                    System.out.println("That is correct!\n");
+                } else {
+                    System.out.println("That was incorrect. The value adds to be:" + sum +"\n");
 
+                }
+            }
 
-       scan.close(); 
+            if (choice == 2) {
+                System.out.println("hola");
+            }
+
+        }
+
+        // Options while loop
+
+        scan.close();
     }
- }
+}
